@@ -36,9 +36,12 @@ cross.new_grid = function() {
 
   // create words list
   words = [];
-  for (var i=0; i<9; i++) {
+  while (words.length < 9) {
     var r = Math.floor(Math.random()*dictionary.length);
-    words.push(dictionary[r]);
+
+    if (!words.includes[dictionary[r]]) {
+      words.push(dictionary[r]);
+    }
   }
 
   words.sort(function(a, b) {
