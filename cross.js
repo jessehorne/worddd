@@ -103,7 +103,7 @@ cross.new_grid = function() {
 
       while (!placed) {
         var min_y = word_length-1;
-        var start_x = cross.random(0, 9);
+        var start_x = cross.random(0, 19);
         var start_y = cross.random(min_y, 9);
 
         for (var l=0; l<word.length; l++) {
@@ -122,7 +122,7 @@ cross.new_grid = function() {
 
       while (!placed) {
         var max_y = word_length-1;
-        var start_x = cross.random(0, 9);
+        var start_x = cross.random(0, 19);
         var start_y = cross.random(0, 9-max_y);
 
         for (var l=0; l<word.length; l++) {
@@ -146,7 +146,7 @@ cross.new_grid = function() {
 
       while (!placed) {
         var min_x = word_length-1;
-        var start_x = cross.random(min_x, 9);
+        var start_x = cross.random(min_x, 19);
         var start_y = cross.random(0, 9);
 
         var old = [];
@@ -188,7 +188,7 @@ cross.new_grid = function() {
 
       while (!placed) {
         var max_x = word_length-1;
-        var start_x = cross.random(0, 9-max_x);
+        var start_x = cross.random(0, 19-max_x);
         var start_y = cross.random(0, 9);
 
         var old = [];
