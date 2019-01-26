@@ -17,24 +17,29 @@ cross.new_grid = function() {
   cross.board.innerHTML = "";
 
   // find words
-  var words = [
-    "startup", "code", "work",
-    "jobs", "ask", "show",
-    "learn", "make", "post",
-    "hack", "vote", "karma"
+  var dictionary = [
+    "startup", "code", "work", "jobs", "ask", "show", "learn", "make", "post", "hack", "vote", "karma",
+    "program", "script", "write", "create", "build", "compile", "run", "execute", "plus", "minus",
+    "python", "lua", "language", "ruby", "haskell", "cobol", "laravel", "rails", "mysql", "get",
+    "post", "delete", "update", "restart", "brain", "smart", "new", "old", "loop", "then", "else",
+    "if", "end", "for", "while", "instance", "data", "log", "file", "manage", "scale", "good",
+    "bad", "decent", "esoteric", "organize", "fix", "main", "char", "text", "float", "long", "int",
+    "string", "block", "coffee", "mtndew", "easy", "hard", "simple", "elegant", "medium", "facebook",
+    "google", "twitter", "github", "open", "source", "think", "imagine", "binary", "hex", "look",
+    "see", "search", "find", "replace", "control", "shift", "space", "tab", "comma", "period", "dash",
+    "number", "double", "money", "finance", "rich", "poor", "wealth", "fast", "slow", "logo", "image",
+    "jpeg", "png", "pdf", "zip", "grep", "copy", "remove", "shell", "bash", "windows", "linux", "mac",
+    "ram", "cpu", "process", "memory"
   ];
 
-  // var words = [
-  //   "one", "two", "three",
-  //   "four", "five", "six",
-  //   "seven", "eight", "nine",
-  //   "ten", "eleven", "twelve"
-  // ];
+  console.log("Dictionary loaded..." + words.length + " words.")
 
-  var words_unsorted = [];
-  words.forEach(function(word) {
-    words_unsorted.push(word);
-  });
+  // create words list
+  words = [];
+  for (var i=0; i<9; i++) {
+    var r = Math.floor(Math.random()*dictionary.length);
+    words.push(dictionary[r]);
+  }
 
   words.sort(function(a, b) {
     return b.length - a.length || b.localeCompare(a);
@@ -70,7 +75,7 @@ cross.new_grid = function() {
 
 
   // add words to words element
-  words_unsorted.forEach(function(word) {
+  words.forEach(function(word) {
     var new_word = document.createElement("div");
     new_word.classList.add("word");
     new_word.innerHTML = word;
